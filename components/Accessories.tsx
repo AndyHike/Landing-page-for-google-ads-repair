@@ -1,36 +1,43 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { AccessoryItem } from '../types';
-import { ApiService } from '../services/api';
 import { ShoppingBag } from 'lucide-react';
 
-export const Accessories: React.FC = () => {
-  const [products, setProducts] = useState<AccessoryItem[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const loadProducts = async () => {
-      try {
-        const data = await ApiService.getProducts();
-        setProducts(data);
-      } catch (error) {
-        console.error("Failed to load products", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    loadProducts();
-  }, []);
-
-  if (loading) {
-    return (
-      <section className="py-24 bg-gray-50">
-        <div className="container mx-auto px-6 text-center text-gray-400 text-base">
-          Načítání produktů...
-        </div>
-      </section>
-    );
+const PRODUCTS: AccessoryItem[] = [
+  {
+    id: 1,
+    name: "Tvrzené Sklo Premium",
+    category: "Ochrana",
+    priceRange: "390 Kč",
+    imageUrl: "https://picsum.photos/id/1/400/300",
+    description: "Maximální tvrdost, oleofobní vrstva."
+  },
+  {
+    id: 2,
+    name: "USB-C Napájecí Adaptér",
+    category: "Napájení",
+    priceRange: "590 Kč",
+    imageUrl: "https://picsum.photos/id/3/400/300",
+    description: "20W rychlonabíjení pro iPhone a iPad."
+  },
+  {
+    id: 3,
+    name: "Datový kabel",
+    category: "Konektivita",
+    priceRange: "450 Kč",
+    imageUrl: "https://picsum.photos/id/48/400/300",
+    description: "Certifikovaný kabel s kevlarovým opletem."
+  },
+  {
+    id: 4,
+    name: "Ochranný kryt",
+    category: "Kryty",
+    priceRange: "490 Kč",
+    imageUrl: "https://picsum.photos/id/119/400/300",
+    description: "Ultratenký profil, matný povrch."
   }
+];
 
+export const Accessories: React.FC = () => {
   return (
     <section id="accessories" className="py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-6">
@@ -46,7 +53,7 @@ export const Accessories: React.FC = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          {products.map((product) => (
+          {PRODUCTS.map((product) => (
             <div key={product.id} className="bg-white rounded-xl border border-gray-200 p-6 hover:border-gray-400 hover:shadow-md transition-all duration-300 group">
               <div className="aspect-[4/3] bg-gray-100 mb-6 rounded-lg overflow-hidden relative">
                  <div className="absolute inset-0 flex items-center justify-center text-gray-300">
