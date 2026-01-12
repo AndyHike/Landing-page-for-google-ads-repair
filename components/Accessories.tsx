@@ -9,7 +9,7 @@ const PRODUCTS: AccessoryItem[] = [
     id: 1,
     name: "Tvrzené Sklo Premium",
     category: "Ochrana",
-    priceRange: "390 Kč",
+    priceRange: "300 Kč",
     imageUrl: "/images/glass.jpg", // Pojmenujte svůj soubor: glass.jpg
     description: "Maximální tvrdost, oleofobní vrstva."
   },
@@ -17,7 +17,7 @@ const PRODUCTS: AccessoryItem[] = [
     id: 2,
     name: "USB-C Napájecí Adaptér",
     category: "Napájení",
-    priceRange: "590 Kč",
+    priceRange: "300 Kč",
     imageUrl: "/images/adapter.jpg", // Pojmenujte svůj soubor: adapter.jpg
     description: "20W rychlonabíjení pro iPhone a iPad."
   },
@@ -25,7 +25,7 @@ const PRODUCTS: AccessoryItem[] = [
     id: 3,
     name: "Datový kabel",
     category: "Konektivita",
-    priceRange: "450 Kč",
+    priceRange: "250 Kč",
     imageUrl: "/images/cable.jpg", // Pojmenujte svůj soubor: cable.jpg
     description: "Certifikovaný kabel s kevlarovým opletem."
   },
@@ -33,7 +33,7 @@ const PRODUCTS: AccessoryItem[] = [
     id: 4,
     name: "Ochranný kryt",
     category: "Kryty",
-    priceRange: "490 Kč",
+    priceRange: "350 Kč",
     imageUrl: "/images/case.jpg", // Pojmenujte svůj soubor: case.jpg
     description: "Ultratenký profil, matný povrch."
   }
