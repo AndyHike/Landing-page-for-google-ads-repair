@@ -1,14 +1,16 @@
 import React from 'react';
 import { AccessoryItem } from '../types';
-import { ShoppingBag } from 'lucide-react';
+import { ShoppingBag, ImageOff } from 'lucide-react';
 
+// POZOR: Zde jsou cesty k vašim obrázkům.
+// Vytvořte složku "images" v kořenovém adresáři a vložte do ní obrázky s těmito názvy.
 const PRODUCTS: AccessoryItem[] = [
   {
     id: 1,
     name: "Tvrzené Sklo Premium",
     category: "Ochrana",
     priceRange: "390 Kč",
-    imageUrl: "https://picsum.photos/id/1/400/300",
+    imageUrl: "/images/glass.jpg", // Pojmenujte svůj soubor: glass.jpg
     description: "Maximální tvrdost, oleofobní vrstva."
   },
   {
@@ -16,7 +18,7 @@ const PRODUCTS: AccessoryItem[] = [
     name: "USB-C Napájecí Adaptér",
     category: "Napájení",
     priceRange: "590 Kč",
-    imageUrl: "https://picsum.photos/id/3/400/300",
+    imageUrl: "/images/adapter.jpg", // Pojmenujte svůj soubor: adapter.jpg
     description: "20W rychlonabíjení pro iPhone a iPad."
   },
   {
@@ -24,7 +26,7 @@ const PRODUCTS: AccessoryItem[] = [
     name: "Datový kabel",
     category: "Konektivita",
     priceRange: "450 Kč",
-    imageUrl: "https://picsum.photos/id/48/400/300",
+    imageUrl: "/images/cable.jpg", // Pojmenujte svůj soubor: cable.jpg
     description: "Certifikovaný kabel s kevlarovým opletem."
   },
   {
@@ -32,7 +34,7 @@ const PRODUCTS: AccessoryItem[] = [
     name: "Ochranný kryt",
     category: "Kryty",
     priceRange: "490 Kč",
-    imageUrl: "https://picsum.photos/id/119/400/300",
+    imageUrl: "/images/case.jpg", // Pojmenujte svůj soubor: case.jpg
     description: "Ultratenký profil, matný povrch."
   }
 ];
@@ -56,14 +58,20 @@ export const Accessories: React.FC = () => {
           {PRODUCTS.map((product) => (
             <div key={product.id} className="bg-white rounded-xl border border-gray-200 p-6 hover:border-gray-400 hover:shadow-md transition-all duration-300 group">
               <div className="aspect-[4/3] bg-gray-100 mb-6 rounded-lg overflow-hidden relative">
-                 <div className="absolute inset-0 flex items-center justify-center text-gray-300">
+                 {/* Placeholder / Fallback logic if image is missing */}
+                 <div className="absolute inset-0 flex items-center justify-center text-gray-300 bg-gray-100 z-0">
                     <ShoppingBag size={32} strokeWidth={1} />
                  </div>
-                 {/* Full color image */}
+                 
+                 {/* Product Image */}
                  <img 
                    src={product.imageUrl} 
                    alt={product.name}
-                   className="w-full h-full object-cover transition-opacity duration-300 hover:opacity-90"
+                   className="w-full h-full object-cover transition-opacity duration-300 hover:opacity-90 relative z-10"
+                   onError={(e) => {
+                     // If image fails to load, hide it so the placeholder icon shows
+                     (e.target as HTMLImageElement).style.opacity = '0';
+                   }}
                  />
               </div>
               
