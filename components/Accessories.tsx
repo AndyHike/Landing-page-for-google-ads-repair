@@ -58,13 +58,13 @@ export const Accessories: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
           {products.map((product) => (
-            <div key={product.id} className="bg-white rounded-xl border border-gray-200 p-6 hover:border-gray-400 hover:shadow-md transition-all duration-300 group">
-              <div className="aspect-[4/3] bg-gray-100 mb-6 rounded-lg overflow-hidden relative">
+            <div key={product.id} className="bg-white rounded-xl border border-gray-200 p-4 md:p-6 hover:border-gray-400 hover:shadow-md transition-all duration-300 group">
+              <div className="aspect-[4/3] bg-gray-100 mb-4 md:mb-6 rounded-lg overflow-hidden relative">
                  {/* Placeholder / Fallback logic if image is missing */}
                  <div className="absolute inset-0 flex items-center justify-center text-gray-300 bg-gray-100 z-0">
-                    <ShoppingBag size={32} strokeWidth={1} />
+                    <ShoppingBag size={24} strokeWidth={1} className="md:w-8 md:h-8" />
                  </div>
                  
                  {/* Product Image */}
@@ -80,11 +80,11 @@ export const Accessories: React.FC = () => {
               </div>
               
               <div>
-                <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">{product.category}</span>
-                <h3 className="font-bold text-lg text-black mt-2 mb-2 truncate">{product.name}</h3>
+                <span className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-wider">{product.category}</span>
+                <h3 className="font-bold text-sm md:text-lg text-black mt-1 md:mt-2 mb-1 md:mb-2 line-clamp-2 md:truncate">{product.name}</h3>
                 
-                <div className="flex items-center justify-between mt-4">
-                  <span className="text-black font-extrabold text-lg">{product.priceRange}</span>
+                <div className="flex items-center justify-between mt-2 md:mt-4">
+                  <span className="text-black font-extrabold text-sm md:text-lg">{product.priceRange}</span>
                 </div>
               </div>
             </div>
