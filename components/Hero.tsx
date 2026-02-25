@@ -1,7 +1,9 @@
 import React from 'react';
 import { ArrowRight, Smartphone, Laptop, MapPin, Clock, Phone, Star } from 'lucide-react';
+import { useLanguage } from './LanguageContext';
 
 export const Hero: React.FC = () => {
+  const { t } = useLanguage();
   
   const handleSelection = (deviceType: 'iphone' | 'android' | 'laptop') => {
     let targetUrl = '';
@@ -19,7 +21,7 @@ export const Hero: React.FC = () => {
         
         <div className="max-w-5xl mx-auto text-center">
             <h1 className="text-3xl md:text-5xl font-extrabold text-black mb-10 md:mb-14 tracking-tight">
-              S čím vám můžeme pomoci?
+              {t('heroTitle')}
             </h1>
             
             {/* Cards - Device Selection */}
@@ -59,7 +61,7 @@ export const Hero: React.FC = () => {
                 >
                     <div className="flex items-center gap-4 md:gap-6">
                         <Laptop size={24} strokeWidth={1.5} className="md:w-10 md:h-10 text-gray-600 group-hover:text-black transition-colors" />
-                        <span className="font-bold text-base md:text-xl text-black">Notebook</span>
+                        <span className="font-bold text-base md:text-xl text-black">{t('laptop')}</span>
                     </div>
                     <div className="md:mt-6 lg:mt-0">
                          <ArrowRight size={20} className="md:w-6 md:h-6 text-gray-300 group-hover:text-black transition-colors" />
@@ -69,7 +71,7 @@ export const Hero: React.FC = () => {
 
             {/* Contact Info Block - Centered and refined */}
             <div className="max-w-4xl mx-auto border-t border-gray-100 pt-10 md:pt-12">
-                 <p className="text-xs md:text-sm font-bold text-gray-400 uppercase tracking-widest mb-8 text-center">Navštivte nás v Praze</p>
+                 <p className="text-xs md:text-sm font-bold text-gray-400 uppercase tracking-widest mb-8 text-center">{t('visitUs')}</p>
                  
                  <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 text-base md:text-lg font-medium text-slate-800 mb-8">
                     
@@ -84,7 +86,7 @@ export const Hero: React.FC = () => {
                             <MapPin size={18} className="md:w-5 md:h-5" />
                         </div>
                         <span className="border-b border-transparent group-hover:border-black transition-colors">
-                            Bělohorská 209/133, Praha 6 - Břevnov
+                            {t('address')}
                         </span>
                     </a>
                     
@@ -101,18 +103,18 @@ export const Hero: React.FC = () => {
                          <div className="bg-gray-50 p-2 md:p-2.5 rounded-full text-black group-hover:bg-black group-hover:text-white transition-colors shrink-0">
                             <Clock size={18} className="md:w-5 md:h-5" />
                         </div>
-                        Po - Pá: 9:00 - 19:00
+                        {t('hours')}
                     </span>
                  </div>
 
                  <div className="flex flex-col items-center gap-3">
-                    <p className="text-base md:text-lg text-gray-500 italic">Těšíme se na Vás!</p>
+                    <p className="text-base md:text-lg text-gray-500 italic">{t('lookingForward')}</p>
                     <div className="flex gap-6 text-sm md:text-base font-bold mt-2">
                         <a 
                             href="https://www.devicehelp.cz/cs/contact" 
                             className="border-b-2 border-black pb-0.5 hover:text-gray-600 hover:border-gray-600 transition-colors"
                         >
-                            Kontaktovat
+                            {t('contact')}
                         </a>
                         <span className="text-gray-300">•</span>
                         <a 
@@ -121,7 +123,7 @@ export const Hero: React.FC = () => {
                             rel="noopener noreferrer" 
                             className="flex items-center gap-2 cursor-pointer hover:opacity-70"
                         >
-                             <span>Hodnocení</span>
+                             <span>{t('reviews')}</span>
                              <div className="flex text-amber-400">
                                 <Star size={14} fill="currentColor" className="md:w-4 md:h-4" />
                                 <Star size={14} fill="currentColor" className="md:w-4 md:h-4" />
