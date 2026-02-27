@@ -49,11 +49,11 @@ export const Accessories: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="mb-12 border-b border-gray-200 pb-6 flex flex-col md:flex-row justify-between items-end gap-4">
           <div>
-             <h2 className="text-2xl md:text-3xl font-bold text-black">
-                {t('sellAccessories')}
+            <h2 className="text-2xl md:text-3xl font-bold text-black">
+              {t('sellAccessories')}
             </h2>
             <p className="text-sm md:text-base text-gray-500 mt-2">
-                {t('storeOnly')}
+              {t('storeOnly')}
             </p>
           </div>
         </div>
@@ -62,27 +62,29 @@ export const Accessories: React.FC = () => {
           {products.map((product) => (
             <div key={product.id} className="bg-white rounded-xl border border-gray-200 p-4 md:p-6 hover:border-gray-400 hover:shadow-md transition-all duration-300 group">
               <div className="aspect-[4/3] bg-gray-100 mb-4 md:mb-6 rounded-lg overflow-hidden relative">
-                 {/* Placeholder / Fallback logic if image is missing */}
-                 <div className="absolute inset-0 flex items-center justify-center text-gray-300 bg-gray-100 z-0">
-                    <ShoppingBag size={24} strokeWidth={1} className="md:w-8 md:h-8" />
-                 </div>
-                 
-                 {/* Product Image */}
-                 <img 
-                   src={product.imageUrl} 
-                   alt={product.name}
-                   className="w-full h-full object-cover transition-opacity duration-300 hover:opacity-90 relative z-10"
-                   onError={(e) => {
-                     // If image fails to load, hide it so the placeholder icon shows
-                     (e.target as HTMLImageElement).style.opacity = '0';
-                   }}
-                 />
+                {/* Placeholder / Fallback logic if image is missing */}
+                <div className="absolute inset-0 flex items-center justify-center text-gray-300 bg-gray-100 z-0">
+                  <ShoppingBag size={24} strokeWidth={1} className="md:w-8 md:h-8" />
+                </div>
+
+                {/* Product Image */}
+                <img
+                  src={product.imageUrl}
+                  alt={product.name}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover transition-opacity duration-300 hover:opacity-90 relative z-10"
+                  onError={(e) => {
+                    // If image fails to load, hide it so the placeholder icon shows
+                    (e.target as HTMLImageElement).style.opacity = '0';
+                  }}
+                />
               </div>
-              
+
               <div>
                 <span className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-wider">{product.category}</span>
                 <h3 className="font-bold text-sm md:text-lg text-black mt-1 md:mt-2 mb-1 md:mb-2 line-clamp-2 md:truncate">{product.name}</h3>
-                
+
                 <div className="flex items-center justify-between mt-2 md:mt-4">
                   <span className="text-black font-extrabold text-sm md:text-lg">{product.priceRange}</span>
                 </div>
