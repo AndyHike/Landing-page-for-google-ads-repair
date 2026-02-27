@@ -1,4 +1,6 @@
-import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
+'use client';
+
+import React, { createContext, useState, useContext, useEffect, ReactNode } from 'react';
 
 type Language = 'cs' | 'en';
 
@@ -12,7 +14,7 @@ interface Translations {
 export const translations: Translations = {
   // Navbar
   accessories: { cs: 'Příslušenství', en: 'Accessories' },
-  
+
   // Hero
   heroTitle: { cs: 'S čím vám můžeme pomoci?', en: 'How can we help you?' },
   laptop: { cs: 'Notebook', en: 'Laptop' },
@@ -22,7 +24,7 @@ export const translations: Translations = {
   lookingForward: { cs: 'Těšíme se na Vás!', en: 'We look forward to seeing you!' },
   contact: { cs: 'Kontaktovat', en: 'Contact' },
   reviews: { cs: 'Hodnocení', en: 'Reviews' },
-  
+
   // ValueProps
   speed: { cs: 'Rychlost', en: 'Speed' },
   speedSub: { cs: '2 hodiny', en: '2 hours' },
@@ -30,11 +32,11 @@ export const translations: Translations = {
   qualitySub: { cs: 'Premium', en: 'Premium' },
   guarantee: { cs: 'Garance', en: 'Guarantee' },
   guaranteeSub: { cs: '6 měsíců', en: '6 months' },
-  
+
   // Accessories
   sellAccessories: { cs: 'Prodáváme příslušenství', en: 'We sell accessories' },
   storeOnly: { cs: 'Dostupné pouze na prodejně', en: 'Available only in store' },
-  
+
   // Products
   glassName: { cs: 'Tvrzené Sklo Premium', en: 'Premium Tempered Glass' },
   glassCategory: { cs: 'Ochrana', en: 'Protection' },
@@ -44,12 +46,12 @@ export const translations: Translations = {
   cableCategory: { cs: 'Konektivita', en: 'Connectivity' },
   caseName: { cs: 'Ochranný kryt', en: 'Protective Case' },
   caseCategory: { cs: 'Kryty', en: 'Cases' },
-  
+
   // MapSection
   whereToFindUs: { cs: 'Kde nás najdete', en: 'Where to find us' },
   tramStop: { cs: 'hned u zastávky U Kaštanu, tramvaje 22/25', en: 'right next to the U Kaštanu stop, trams 22/25' },
   getDirections: { cs: 'Prokládat trasu', en: 'Get directions' },
-  
+
   // Footer
   contactHeading: { cs: 'Kontakt', en: 'Contact' },
   openingHours: { cs: 'Otevírací doba', en: 'Opening hours' },

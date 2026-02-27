@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { AccessoryItem } from '../types';
 import { ShoppingBag, ImageOff } from 'lucide-react';

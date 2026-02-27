@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Clock, CheckCircle2, Star } from 'lucide-react';
 import { useLanguage } from './LanguageContext';
@@ -9,30 +11,30 @@ export const ValueProps: React.FC = () => {
       <div className="container mx-auto px-6">
         {/* Value Props Grid */}
         <div className="grid grid-cols-3 gap-6 md:gap-12 max-w-5xl mx-auto">
-            
-            <div className="flex flex-col items-center text-center p-4">
-                <div className="mb-4 text-black">
-                    <Clock size={28} strokeWidth={1.5} className="md:w-10 md:h-10" />
-                </div>
-                <h3 className="text-sm md:text-lg font-bold text-black uppercase tracking-wide">{t('speed')}</h3>
-                <p className="text-xs md:text-sm text-gray-500 mt-1">{t('speedSub')}</p>
-            </div>
 
-            <div className="flex flex-col items-center text-center border-l border-r border-gray-100 p-4">
-                <div className="mb-4 text-black">
-                    <Star size={28} strokeWidth={1.5} className="md:w-10 md:h-10" />
-                </div>
-                <h3 className="text-sm md:text-lg font-bold text-black uppercase tracking-wide">{t('quality')}</h3>
-                <p className="text-xs md:text-sm text-gray-500 mt-1">{t('qualitySub')}</p>
+          <div className="flex flex-col items-center text-center p-4">
+            <div className="mb-4 text-black">
+              <Clock size={28} strokeWidth={1.5} className="md:w-10 md:h-10" />
             </div>
+            <h3 className="text-sm md:text-lg font-bold text-black uppercase tracking-wide">{t('speed')}</h3>
+            <p className="text-xs md:text-sm text-gray-500 mt-1">{t('speedSub')}</p>
+          </div>
 
-            <div className="flex flex-col items-center text-center p-4">
-                <div className="mb-4 text-black">
-                    <CheckCircle2 size={28} strokeWidth={1.5} className="md:w-10 md:h-10" />
-                </div>
-                <h3 className="text-sm md:text-lg font-bold text-black uppercase tracking-wide">{t('guarantee')}</h3>
-                <p className="text-xs md:text-sm text-gray-500 mt-1">{t('guaranteeSub')}</p>
+          <div className="flex flex-col items-center text-center border-l border-r border-gray-100 p-4">
+            <div className="mb-4 text-black">
+              <Star size={28} strokeWidth={1.5} className="md:w-10 md:h-10" />
             </div>
+            <h3 className="text-sm md:text-lg font-bold text-black uppercase tracking-wide">{t('quality')}</h3>
+            <p className="text-xs md:text-sm text-gray-500 mt-1">{t('qualitySub')}</p>
+          </div>
+
+          <div className="flex flex-col items-center text-center p-4">
+            <div className="mb-4 text-black">
+              <CheckCircle2 size={28} strokeWidth={1.5} className="md:w-10 md:h-10" />
+            </div>
+            <h3 className="text-sm md:text-lg font-bold text-black uppercase tracking-wide">{t('guarantee')}</h3>
+            <p className="text-xs md:text-sm text-gray-500 mt-1">{t('guaranteeSub')}</p>
+          </div>
 
         </div>
       </div>
