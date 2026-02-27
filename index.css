@@ -1,0 +1,8 @@
+body {
+    font-family: 'Manrope', sans-serif;
+}
+
+/* Removing smooth scroll for a snappier, less 'animated' feel as requested */
+html {
+    scroll-behavior: auto;
+}
